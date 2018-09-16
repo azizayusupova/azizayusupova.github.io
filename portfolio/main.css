@@ -1,0 +1,98 @@
+body{
+    margin:0;
+    padding: 0;
+}
+.header {
+    display: block;
+   position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    
+}
+.header .main_bg {
+    display: block;
+    height: 100vh;
+    background: url(img/mainbg.jpg);
+    background-position: center;
+    background-size: cover;
+    transition: all 2s 0.2s ease;
+    filter: blur(2px);
+}
+.header .main_bg:hover {
+    transform: scale(1.1);
+    filter: blur(0px);
+}
+.header .menu {
+    
+}
+.header .title {
+   position: absolute;
+    top: 50%;                         
+    transform: translate(-50%, -50%);
+    left: 50%;
+    width: 80vw;
+    height: 70vh;
+    overflow: hidden;
+    
+}
+
+.header .title .sub_bg {
+    
+    position: relative;
+    height: inherit;
+    background: url(img/mainbg.jpg) no-repeat;
+    background-size: 100%;
+    background-position: center;
+    box-sizing: border-box;
+    transition: all 2s 0.2s ease;
+    
+    
+}
+.header .title .sub_bg:before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: url(img/mainbg.jpg) no-repeat;
+    background-size: 100%;
+    background-position: center;
+    z-index: 1;
+    filter: blur(2px);
+    opacity: 1;
+    transition: all 2s 0.2s ease;
+    
+} 
+.header .title .sub_bg:hover{
+    background-size: 110%;
+    
+}
+.header .title .sub_bg:hover:before {
+    opacity: 0;
+    
+    
+}
+.header .title .text {
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 60px;
+    letter-spacing: -2px;
+    color: #464646;
+    display: inline-block;
+    text-align: center;
+    line-height: 1.4;
+    z-index: 10;
+}
+.header .my_name {
+    
+    
+    
+}
+.header .job {
+    
+}
