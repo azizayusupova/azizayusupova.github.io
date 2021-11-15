@@ -1,0 +1,12 @@
+#car {
+    display: block;
+    text-align: center;
+    font-size: 34px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.help {
+    font-size: 22px;
+    
+}
