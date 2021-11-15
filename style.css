@@ -10,3 +10,7 @@
     font-size: 22px;
     
 }
+
+.hood:hover {
+border: 3px solid #f26522;
+}
