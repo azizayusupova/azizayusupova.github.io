@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let id = [];
+
+        async function getResponse(idArr) {
+            
+            const options = {method: 'GET', headers: {Accept: 'application/json'}}
+
+            let response = await fetch('https://app.ecwid.com/api/v3/6732144/categories?token=secret_sRjYxyhEd52Bi1umHL721TpHLRKMwBkG', options)
+            let content = await response.json()
+            let items = content.items;
+
+            let key;
+            for (key in items) {
+                id[key] = items[key].id
+            
+            }
+            console.log(id);
+            return id;
+        }
+        
+        getResponse(id);
+            setTimeout(function(){
+                console.log(id);
+                for (let key in id) {
+            deleteCategory(key, id);
+            console.log(id[key])
+        }
+    }, 1000)
+    
+
+        async function deleteCategory(key, idArr) {
+            const options = {method: 'DELETE', headers: {Accept: 'application/json'}};
+            //console.log(idArr);
+            let response = await fetch('https://app.ecwid.com/api/v3/6732144/categories/' + idArr[key] + '?token=secret_sRjYxyhEd52Bi1umHL721TpHLRKMwBkG', options)
+            .then(response => response.json())
+            .then(response => console.log(response))
+            .catch(err => console.error(err));
+            
+        }
+        
+        
+        
+    </script>
+</body>
+</html>
