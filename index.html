@@ -65,10 +65,12 @@ charset="utf-8"></script><script>Ecwid.init();</script></div>
             Ecwid.Cart.addProduct(idOfProduct);
             let index = itemsForCar.indexOf(idOfProduct);
             if (itemsForCar.includes(idOfProduct)) {
-                itemsForCar.splice(index);
+                itemsForCar.splice(index, 1);
+                console.log(itemsForCar);
             }
             
             if (itemsForCar.length == 0) {
+                
                 document.getElementById('car').innerHTML = 'Вы собрали автомобиль!';
             }
             setTimeout(() => {
