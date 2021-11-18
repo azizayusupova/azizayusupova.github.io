@@ -40,6 +40,7 @@ charset="utf-8"></script><script>Ecwid.init();</script></div>
 
     <script>
         window.onload = function () {
+            
         const prodactID = {
             'headlight': 411074652,
             'hood': 416275700,
@@ -47,6 +48,10 @@ charset="utf-8"></script><script>Ecwid.init();</script></div>
             'door': 411074650,
             'wheel': 411074651
         };
+
+        let itemsInCart = [];
+        let itemsForCar = [411074652, 416275700, 416275699, 411074650, 411074651];
+        
 
         var inputs = document.getElementsByTagName("area");
         for (var i = 0; i < inputs.length; i++) {
@@ -56,29 +61,46 @@ charset="utf-8"></script><script>Ecwid.init();</script></div>
         function addToCart() {
             var classOfProduct = this.className;
             var idOfProduct = prodactID[classOfProduct];
-
+        
+            Ecwid.Cart.addProduct(idOfProduct);
+            let index = itemsForCar.indexOf(idOfProduct);
+            if (itemsForCar.includes(idOfProduct)) {
+                itemsForCar.splice(index);
+            }
+            
+            if (itemsForCar.length == 0) {
+                document.getElementById('car').innerHTML = 'Вы собрали автомобиль!';
+            }
             Ecwid.Cart.get(function(cart) {
-                //console.log(cart.items);
-                var itemsInCart = cart.items;
- 
-                if (itemsInCart.length == 0) {
-                    Ecwid.Cart.addProduct(idOfProduct);
-                    return;
-                }
-                for (var i = 0; i < itemsInCart.length; i++) {
-                    
-                    if (itemsInCart[i].product.id == idOfProduct) {
-                        alert('Этот товар уже добавлен в корзину, кликните на другую область');
-                        return;
-                    } 
-                }
-                Ecwid.Cart.addProduct(idOfProduct);
-                if (itemsInCart.length == 4) {
+                console.log(cart.items);
+                if (cart.items.length == 5) {
                     document.getElementById('car').innerHTML = 'Вы собрали автомобиль!';
-                };
-            });
+                }
+                
+            })
+
+            //Ecwid.Cart.get(function(cart) {
+                //console.log(itemsForCar.length);
+                //var itemsInCart = cart.items;
+ 
+                //if (itemsInCart.length == 0) {
+                   // Ecwid.Cart.addProduct(idOfProduct);
+                    //return;
+                //}
+                //for (var i = 0; i < itemsInCart.length; i++) {
+                    
+                //    if (itemsInCart[i].product.id == idOfProduct) {
+                 //       alert('Этот товар уже добавлен в корзину, кликните на другую область');
+                   //     return;
+                   // } 
+                //}
+                //Ecwid.Cart.addProduct(idOfProduct);
+               // if (itemsInCart.length == 4) {
+                //    document.getElementById('car').innerHTML = 'Вы собрали автомобиль!';
+               // };
+            };
         }
-    }
+    
     </script>
 </body>
 </html>
