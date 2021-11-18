@@ -71,13 +71,15 @@ charset="utf-8"></script><script>Ecwid.init();</script></div>
             if (itemsForCar.length == 0) {
                 document.getElementById('car').innerHTML = 'Вы собрали автомобиль!';
             }
-            Ecwid.Cart.get(function(cart) {
-                console.log(cart.items);
+            setTimeout(() => {
+                Ecwid.Cart.get(function(cart) {
+                console.log(cart.items.length);
                 if (cart.items.length == 5) {
                     document.getElementById('car').innerHTML = 'Вы собрали автомобиль!';
-                }
-                
+                }    
             })
+            }, 1000);
+                
 
             //Ecwid.Cart.get(function(cart) {
                 //console.log(itemsForCar.length);
