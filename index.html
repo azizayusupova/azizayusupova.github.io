@@ -4,107 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://djqizrxa6f10j.cloudfront.net/ecwid-sdk/js/1.2.1/ecwid-app.js"></script>
-    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
-    
-<div class="ec-cart-widget"></div>
-<div><script data-cfasync="false" type="text/javascript"
-src="https://app.ecwid.com/script.js?6732144&data_platform=code" 
-charset="utf-8"></script><script>Ecwid.init();</script></div>
-    <!--<div id="my-store-6732144"></div>
-    <div> 
-        <script type="text/javascript" src="https://app.ecwid.com/script.js?6732144" charset="utf-8"></script>
-        <script type="text/javascript"> xProductBrowser("id=my-store-1003");</script>
-    </div>-->
-    <div id='car'><img src="car.png" alt="car" usemap="#map" /></div>
-    <map name="map">
-        <area class="headlight" shape="poly" coords="619, 191, 645, 225, 660, 277, 750, 265, 741, 212, 699, 171" />
-        <area class="hood" shape="poly" coords="403, 116, 412, 180, 394, 288, 424, 297, 424, 246, 469, 189, 552, 189, 615, 242, 615, 279, 655, 279, 645, 234, 614, 190, 693, 167, 758, 137, 720, 114, 594, 91, 570, 103, 490, 115" />
-        <area class="window" shape="poly" coords="125, 82, 178, 51, 283, 30, 353, 60, 401, 114" />
-        <area class="window" shape="poly" coords="347, 32, 428, 113, 547, 104, 578, 89, 453, 19" />
-        <area class="door" shape="poly" coords="159, 113, 176, 184, 196, 228, 379, 261, 392, 246, 404, 149, 399, 111, 182, 90, 159, 106" />
-        <area class="wheel" shape="circle" coords="517, 283, 90" />
-        <area class="wheel" shape="poly" coords="19, 218, 20, 180, 35, 162, 54, 150, 63, 148, 94, 172, 112, 222, 118, 245, 127, 245, 121, 257, 93, 273, 60, 278, 33, 256" />
-    </map>
-
-    <div class="help">
-        <p> Подсказка:</p>
-        <p>
-           1) чтобы полностью укомплектовать автомобиль, нужно добавить в корзину переднюю фару, капот, дверь, любое окно и колесо.
-        </p>
-        <p>2) Чтобы добавить товары в корзину, достаточно кликнуть по определенной области изображения.</p>
-    </div>
-
-    <script>
-        window.onload = function () {
-            
-        const prodactID = {
-            'headlight': 411074652,
-            'hood': 416275700,
-            'window': 416275699,
-            'door': 411074650,
-            'wheel': 411074651
-        };
-
-        let itemsInCart = [];
-        let itemsForCar = [411074652, 416275700, 416275699, 411074650, 411074651];
-        
-
-        var inputs = document.getElementsByTagName("area");
-        for (var i = 0; i < inputs.length; i++) {
-            inputs[i].addEventListener("click", addToCart);
-        }
-
-        function addToCart() {
-            var classOfProduct = this.className;
-            var idOfProduct = prodactID[classOfProduct];
-        
-            Ecwid.Cart.addProduct(idOfProduct);
-            let index = itemsForCar.indexOf(idOfProduct);
-            if (itemsForCar.includes(idOfProduct)) {
-                itemsForCar.splice(index, 1);
-                console.log(itemsForCar);
-            }
-            
-            if (itemsForCar.length == 0) {
-                
-                document.getElementById('car').innerHTML = 'Вы собрали автомобиль!';
-            }
-            setTimeout(() => {
-                Ecwid.Cart.get(function(cart) {
-                console.log(cart.items.length);
-                if (cart.items.length == 5) {
-                    document.getElementById('car').innerHTML = 'Вы собрали автомобиль!';
-                }    
-            })
-            }, 1000);
-                
-
-            //Ecwid.Cart.get(function(cart) {
-                //console.log(itemsForCar.length);
-                //var itemsInCart = cart.items;
- 
-                //if (itemsInCart.length == 0) {
-                   // Ecwid.Cart.addProduct(idOfProduct);
-                    //return;
-                //}
-                //for (var i = 0; i < itemsInCart.length; i++) {
-                    
-                //    if (itemsInCart[i].product.id == idOfProduct) {
-                 //       alert('Этот товар уже добавлен в корзину, кликните на другую область');
-                   //     return;
-                   // } 
-                //}
-                //Ecwid.Cart.addProduct(idOfProduct);
-               // if (itemsInCart.length == 4) {
-                //    document.getElementById('car').innerHTML = 'Вы собрали автомобиль!';
-               // };
-            };
-        }
-    
-    </script>
+    <div id="my-store-177207802"></div>
+<div>
+<script data-cfasync="false" type="text/javascript" src="https://appecwid-93886.ecwid.qa/script.js?177207802&data_platform=code&data_date=2022-01-17" charset="utf-8"></script><script type="text/javascript"> xProductBrowser("categoriesPerRow=3","views=grid(20,3) list(60) table(60)","categoryView=grid","searchView=list","id=my-store-177207802");</script>
+</div>
 </body>
 </html>
